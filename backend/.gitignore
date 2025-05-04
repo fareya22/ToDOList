@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+.env/
+.Python
+
+# Environment variable files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Cache and temporary files
+*.sqlite3
+*.db
+*.tmp
+*.bak
+*.swp
+*~
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# MyPy / Pyre / Pylint
+.mypy_cache/
+.pyre/
+pylint-report.txt
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
