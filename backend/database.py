@@ -1,17 +1,32 @@
+# database.py
 from pymongo import MongoClient
 import os
 from dotenv import load_dotenv
+import logging
 
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Load environment variables
 load_dotenv()
-client = MongoClient(os.getenv("MONGO_URI"))
-db = client.my_database
-collection = db.tasks
+mongo_uri = os.getenv("MONGO_URI")
 
-# print("Connecting to URI:", collection)
-# print("Connecting to database:", db.name) 
-# Check if the connection is successful
-try: 
+if not mongo_uri:
+    logger.error("MONGO_URI environment variable not set!")
+    raise ValueError("MONGO_URI environment variable not set!")
+
+# Create MongoDB client
+try:
+    client = MongoClient(mongo_uri)
+    # Test connection
     client.server_info()
-    print("Connected to mongoDb successfully")
+    logger.info("Connected to MongoDB successfully")
+    
+    # Initialize database and collection
+    db = client.my_database
+    collection = db.tasks
+    
 except Exception as e:
-    print("Failed to connect to MongoDB:", e)
+    logger.error(f"Failed to connect to MongoDB: {e}")
+    raise

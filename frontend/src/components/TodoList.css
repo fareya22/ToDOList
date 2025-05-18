@@ -1,0 +1,114 @@
+/* TodoList.css */
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--light-gray);
+  transition: background-color 0.2s;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item:hover {
+  background-color: var(--light-gray);
+}
+
+.todo-checkbox {
+  margin-right: var(--spacing-md);
+  width: 20px;
+  height: 20px;
+  accent-color: var(--success-color);
+  cursor: pointer;
+}
+
+.todo-content {
+  flex: 1;
+  margin-right: var(--spacing-md);
+}
+
+.todo-title {
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  transition: text-decoration 0.2s;
+}
+
+.todo-title.completed {
+  text-decoration: line-through;
+  color: var(--dark-gray);
+}
+
+.todo-date {
+  font-size: 0.75rem;
+  color: var(--dark-gray);
+}
+
+.todo-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.todo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s;
+}
+
+.todo-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.todo-btn.edit {
+  color: var(--primary-color);
+}
+
+.todo-btn.delete {
+  color: var(--error-color);
+}
+
+.empty-list {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--dark-gray);
+  font-style: italic;
+}
+
+/* Edit mode */
+.todo-edit-form {
+  display: flex;
+  width: 100%;
+  gap: var(--spacing-sm);
+}
+
+.todo-edit-input {
+  flex: 1;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.todo-edit-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 0 var(--spacing-md);
+  cursor: pointer;
+}
+
+.todo-cancel-btn {
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 0 var(--spacing-md);
+  cursor: pointer;
+}
